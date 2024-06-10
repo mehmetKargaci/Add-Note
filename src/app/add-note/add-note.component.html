@@ -1,0 +1,19 @@
+<p>add-note-component</p>
+<div class="container">
+  <div>
+    <h2>NOTEBOOKS</h2>
+  </div>
+
+  <div>
+    <input
+      class="title-input"
+      placeholder="Enter a Title"
+      [(ngModel)]="title"
+    />
+
+    <button class="add-button" (click)="addNote()">+ New Note</button>
+  </div>
+  @for(not of notes; track not.id){
+  <button class="list-button">{{ not.title }}</button>
+  }
+</div>

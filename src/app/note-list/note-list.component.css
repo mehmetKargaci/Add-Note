@@ -1,0 +1,26 @@
+
+.title-list{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(244, 213, 213);
+  color: white;
+  width: 25rem;
+  height: 38rem;
+ 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;  
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  li:hover {
+    background-color: #1c1b1b;
+  }

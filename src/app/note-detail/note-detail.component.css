@@ -1,0 +1,12 @@
+.details {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    background-color: azure;
+    width: 30rem;
+    height: 35rem;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }

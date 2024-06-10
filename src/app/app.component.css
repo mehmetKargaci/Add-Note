@@ -1,0 +1,18 @@
+.note-title{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    gap: 1rem;      
+    text-align: center;
+    color: aliceblue;
+    background: rgb(199, 198, 198);
+    padding: 1rem;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px ;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    height: 40rem;
+    
+  
+}
+

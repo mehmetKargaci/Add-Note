@@ -1,0 +1,54 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    color: white;
+    width: 30rem;
+    height: 37rem;
+    
+}
+
+div {
+    margin-bottom: 20px;
+  } 
+  
+.title-input{
+  align-items: flex-start;
+  text-align: left;
+  width:15rem;
+
+}
+
+
+.add-button{
+    background-color: #2f73e2;
+    color: #f5f2f7;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    width: 5%;
+    min-width: 10rem;
+    text-align: left;
+   
+}
+add-button:hover {
+    background-color: #a0acb9;
+}
+
+.list-button{
+  display: flex;
+  align-items: left;  
+  background-color: rgba(229, 217, 211, 0.478);
+  color: white;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  width: 5%;
+  min-width: 28rem;
+  text-align: left;
+
+}
+
+
+
