@@ -13,7 +13,7 @@
 
     <button class="add-button" (click)="addNote()">+ New Note</button>
   </div>
-  @for(not of notes; track not.id){
+  @for(not of getNotes(); track not.id){
   <button class="list-button">{{ not.title }}</button>
   }
 </div>

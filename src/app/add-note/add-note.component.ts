@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { Note, NoteService } from '../services/note.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -12,21 +12,21 @@ import { NoteListComponent } from '../note-list/note-list.component';
   styleUrl: './add-note.component.css'
 })
 export class AddNoteComponent {
-  title!: string; 
-  notes = this.getNotes();
-  
-  
+  title!: string;
+  @Output() noteData = new EventEmitter<Note[]>();
+
+
+
   constructor(private noteService: NoteService){ }
 
   getNotes(){    
     return this.noteService.getNotes();
-  }
+  } 
 
   addNote(): void {
     if(this.title){
       this.noteService.addNote(this.title);
-      const a = this.getNotes();
-      console.log(a);       
+      this.noteData.emit(this.getNotes());            
       this.title = '';  
     }
 

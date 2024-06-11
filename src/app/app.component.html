@@ -1,7 +1,7 @@
 
 <div class="note-title">
-  <app-add-note></app-add-note>
-  <app-note-list (noteSelected)="selectedNote"></app-note-list> 
+  <app-add-note (noteData)="showSubNotes($event)" ></app-add-note>
+  <app-note-list ></app-note-list> 
   <app-note-detail ></app-note-detail> 
 </div>
 

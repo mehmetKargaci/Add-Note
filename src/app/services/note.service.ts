@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-
+import { Injectable, signal } from '@angular/core';
 
 export interface Note {
   id: number;
@@ -14,6 +13,7 @@ export interface SubNote {
 @Injectable({providedIn: 'root'})
 export class NoteService {
   notes : Note[] = [];
+  notesData = signal<Note[] | undefined>(undefined); //using signal for the Note proporty
 
 
   getNotes(): Note[] {  
@@ -26,11 +26,16 @@ export class NoteService {
       title,      
     };
     this.notes.push(newNote);
-    console.log(newNote);     
+       
   }
 
   deleteNote(id:number){
     this.notes = this.notes.filter((note)=> note.id !==id);
+  }
+
+  notesDataResult(){
+    return this.notesData.set(this.notes);
+
   }
 
 }

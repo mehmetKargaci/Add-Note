@@ -1,8 +1,12 @@
 <p>note-list-comp</p>
-<div class="title-list">   
+<div class="title-list">
+ 
     <ul >
-      <li *ngFor="let note of notes" (click)="viewNoteDetail(note)">
-        {{ note.title }}
-      </li>
+      @if(note){
+        <li>
+          {{subnotes}}
+        </li>
+      }
+
     </ul>
   </div>
