@@ -1,41 +1,65 @@
 import { Injectable, signal } from '@angular/core';
 
-export interface Note {
-  id: number;
-  title: string;  
+export class Note {
+  id = Math.random();
+  title = '';
+  subNotes: SubNote[] = [];
 }
 
-export interface SubNote {
-  id: number;
-  subtitle: string;
+class SubNote {
+  id = Math.random();
+  subtitle = '';
+  context = '';
 }
 
 @Injectable({providedIn: 'root'})
 export class NoteService {
-  notes : Note[] = [];
-  notesData = signal<Note[] | undefined>(undefined); //using signal for the Note proporty
 
+  private _notes : Note[] = [
+    {
+      id: 1,
+      title: 'Javascript',
+      subNotes: [
+        {
+          id: 1,
+          subtitle: 'Angular',
+          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+        },
+        {
+          id: 2,
+          subtitle: 'React',
+          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+        },
+      ]
+    },
+    {
+      id: 2,
+      title: 'NodeJS',
+      subNotes: [
+        {
+          id: 3,
+          subtitle: 'NestJS',
+          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+        },
+        {
+          id: 4,
+          subtitle: 'Mysql',
+          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+        },
+      ]
+    },
+  ];
 
-  getNotes(): Note[] {  
-    return this.notes;
+  selectedNote = {
+    nodeId: -1,
+    subNoteId: -1,
   }
 
-  addNote(title: string): void {    
-    const newNote: Note = { 
-      id: Date.now(),
-      title,      
-    };
-    this.notes.push(newNote);
-       
+  notes = structuredClone(this._notes);
+
+  addNote(title: string) {
+    const note  = new Note();
+    note.title = title;
+    this.notes.push(note);
   }
-
-  deleteNote(id:number){
-    this.notes = this.notes.filter((note)=> note.id !==id);
-  }
-
-  notesDataResult(){
-    return this.notesData.set(this.notes);
-
-  }
-
 }

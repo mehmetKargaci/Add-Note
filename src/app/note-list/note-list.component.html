@@ -1,12 +1,7 @@
 <p>note-list-comp</p>
 <div class="title-list">
- 
-    <ul >
-      @if(note){
-        <li>
-          {{subnotes}}
-        </li>
-      }
 
-    </ul>
-  </div>
+  @if (subNote) {
+<button>{{subNote.subNotes[0].subtitle | json}}</button>    
+  }
+</div>

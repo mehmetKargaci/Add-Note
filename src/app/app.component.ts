@@ -15,16 +15,11 @@ import { NoteService } from './services/note.service';
     imports: [RouterOutlet, AddNoteComponent, NoteListComponent, NoteDetailComponent]
 })
 export class AppComponent {
-  subNotes!: Note[]; 
 
-  showSubNotes(subNotes: Note[]){
-    this.subNotes = subNotes;
-    console.log(subNotes);
+  subNote?: Note;
 
+  showSubNotes(subNote: Note){
+    this.subNote = subNote;
   }
 
-
- 
-
- 
 }

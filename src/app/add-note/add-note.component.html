@@ -8,12 +8,14 @@
     <input
       class="title-input"
       placeholder="Enter a Title"
-      [(ngModel)]="title"
+      [formControl]="titleControl"
     />
 
     <button class="add-button" (click)="addNote()">+ New Note</button>
   </div>
-  @for(not of getNotes(); track not.id){
-  <button class="list-button">{{ not.title }}</button>
+
+  @for (note of notes; track note.id) {
+    <button class="list-button" (click)="onTitleClick(note)">{{ note.title }}</button>
   }
+
 </div>

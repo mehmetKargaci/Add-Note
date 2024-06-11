@@ -1,8 +1,8 @@
 
 <div class="note-title">
   <app-add-note (noteData)="showSubNotes($event)" ></app-add-note>
-  <app-note-list ></app-note-list> 
-  <app-note-detail ></app-note-detail> 
+  <app-note-list [subNote]="subNote"></app-note-list>
+  <app-note-detail ></app-note-detail>
 </div>
 
 

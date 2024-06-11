@@ -10,20 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './note-list.component.css'
 })
 export class NoteListComponent {
- 
-  @Input() note!: Note[];
+
+  @Input() note?: Note[];
   @Output() noteSelected = new EventEmitter<Note>();
-  noteService = inject(NoteService); 
+  noteService = inject(NoteService);
+  @Input() subNote?: Note;
 
 
-  viewNoteDetail(note: Note): void {
-    this.noteSelected.emit(note);    
-  }
-
-  // get subnotes(){
-  //   console.log(this.noteService.notesDataResult);
-  //   return this.noteService.notesDataResult;
-  // }
-  subnotes = computed(()=> this.noteService.notesDataResult)
 
 }
