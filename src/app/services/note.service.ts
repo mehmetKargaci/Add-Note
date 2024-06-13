@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 export class Note {
   id = Math.random();
@@ -23,12 +23,12 @@ export class NoteService {
         {
           id: 1,
           subtitle: 'Angular',
-          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+          context: 'my context is here'
         },
         {
           id: 2,
           subtitle: 'React',
-          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+          context: 'please add new context'
         },
       ]
     },
@@ -39,27 +39,33 @@ export class NoteService {
         {
           id: 3,
           subtitle: 'NestJS',
-          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+          context: 'work hard'
         },
         {
           id: 4,
           subtitle: 'Mysql',
-          context: 'kjhshfksajhdsak welkjfnowlisen wlei welkifmseorli'
+          context: 'never give up!'
         },
       ]
     },
   ];
 
   selectedNote = {
-    nodeId: -1,
+    noteId: -1,
     subNoteId: -1,
   }
 
   notes = structuredClone(this._notes);
+  note  = new Note();
 
-  addNote(title: string) {
-    const note  = new Note();
-    note.title = title;
-    this.notes.push(note);
+  addNote(title: string) {    
+    this.note.title = title;
+    this.notes.push(this.note);
+    title = '';
   }
+  // addSubnote(subtitle: string) {
+  //   this.note.subNotes = subtitle;
+  //   this.notes.push(subnote.subtitle);
+  //   title = '';
+  // }
 }

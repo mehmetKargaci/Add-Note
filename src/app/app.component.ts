@@ -16,10 +16,17 @@ import { NoteService } from './services/note.service';
 })
 export class AppComponent {
 
+
   subNote?: Note;
+  context ?: string;
 
   showSubNotes(subNote: Note){
     this.subNote = subNote;
+    console.log(this.subNote);
+  }
+  showContext(context: string) {
+    this.context =  context;
+
   }
 
 }

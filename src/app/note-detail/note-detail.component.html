@@ -1,7 +1,11 @@
 
 <p>note-details comp</p>
-<div class="details"
-  *ngIf="note">
-    <h2>{{ note()?.title }}</h2>
+<div class="details" >
+  @if(subNote){
+    <input class="context-title" placeholder=" Title" (click)="addContext()">
+    <textarea class="context-input" [value]="subNote.title " (click)="addContext()"></textarea>
+
+  }
+
    
   </div>

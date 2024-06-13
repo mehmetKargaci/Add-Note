@@ -14,7 +14,7 @@
     <button class="add-button" (click)="addNote()">+ New Note</button>
   </div>
 
-  @for (note of notes; track note.id) {
+  @for (note of notes; track subNote?.id) {
     <button class="list-button" (click)="onTitleClick(note)">{{ note.title }}</button>
   }
 

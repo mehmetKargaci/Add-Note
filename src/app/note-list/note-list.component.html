@@ -1,7 +1,24 @@
 <p>note-list-comp</p>
 <div class="title-list">
 
-  @if (subNote) {
-<button>{{subNote.subNotes[0].subtitle | json}}</button>    
+  @if (subnoteTitle) {
+    <div>
+      <button class="subnote-button">+ New Subnote</button>
+      <div>
+        <input 
+          class="subtitle-input"
+          placeholder="Enter Subtitle"
+          [formControl]="subtitleConrol">
+      </div>
+      @for(note of notes; track note.id){      
+        @for(subnote of subnoteTitle.subNotes ; track subnote.id){
+          <button 
+            class="list-button" 
+            (click)="onSelectSubNote(note.id, subnote.id )"
+            (click)="onTitleClick(subnote.context)">{{subnote.subtitle}}</button>  
+        }
+  
+      }
+    </div>
   }
 </div>

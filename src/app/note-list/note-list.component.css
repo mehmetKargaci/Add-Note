@@ -8,19 +8,31 @@
   height: 38rem;
  
 }
+.subnote-button{
+  background-color: rgb(76, 129, 234);  
+  color: white;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  height: 20px;
+  width: 150px;
+  margin-top: 5px;
+}
+.subtitle-input{  
+  text-align: left;
+  width:15rem;
+  margin: 10px;
+  width: 22rem;  
+  }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    padding: 10px;  
-    color: white;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-  
-  li:hover {
-    background-color: #1c1b1b;
+.list-button{
+  display: flex;
+  background-color: rgba(98, 95, 93, 0.478);
+  color: white; 
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  width: 23rem;
+  text-align: left;
+  margin: 5px;
   }
