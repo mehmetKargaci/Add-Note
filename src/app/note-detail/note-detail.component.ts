@@ -1,5 +1,5 @@
 import { Component, Input, inject, input } from '@angular/core';
-import { Note } from '../services/note.service';
+import { Note, SubNote } from '../services/note.service';
 import { CommonModule } from '@angular/common';
 import { NoteService } from '../services/note.service';
 
@@ -11,24 +11,19 @@ import { NoteService } from '../services/note.service';
   styleUrl: './note-detail.component.css'
 })
 export class NoteDetailComponent {
-  @Input() subNote? : Note;
-
+addContext() {
+throw new Error('Method not implemented.');
+}
+  @Input() subNote? : SubNote;
   
   
   noteService = inject(NoteService);
 
-  notes = this.noteService.notes;
-  selected = this.noteService.selectedNote; 
+  notes = this.noteService.notes;  
   
+
  
   
-
-  addContext(){
-  
-  
-  }
-  
-
 
 
 }

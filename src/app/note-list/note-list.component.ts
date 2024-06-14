@@ -1,5 +1,5 @@
 import { Component, OnInit,Output,EventEmitter, Input ,inject, signal, computed} from '@angular/core';
-import { NoteService, Note } from '../services/note.service';
+import { NoteService, Note, SubNote } from '../services/note.service';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoteDetailComponent } from '../note-detail/note-detail.component';
@@ -12,17 +12,15 @@ import { NoteDetailComponent } from '../note-detail/note-detail.component';
   styleUrl: './note-list.component.css'
 })
 export class NoteListComponent {
-  @Input() subnoteTitle?: Note;
-  @Output() context = new EventEmitter<string>();
-  selectedContext: string = '';
+
+  @Input() note?: Note;
+  @Output() subNoteEmitter = new EventEmitter<SubNote>();
 
   subtitleConrol = new FormControl('');
-
   noteService = inject(NoteService);
+  
 
-  notes = this.noteService.notes
-
-
+ 
   addSubnote(): void {
     let title = this.subtitleConrol.value;
     if (title && this.subtitleConrol.valid){
@@ -32,23 +30,13 @@ export class NoteListComponent {
 
   }
 
-  onTitleClick(context: string){
-    this.context.emit(context);
-
+  onSubNoteClick(subNote: SubNote){
+    this.subNoteEmitter.emit(subNote);
   }
-  onSelectSubNote(noteId: number, subNoteId: number): void {
-    this.noteService.selectedNote.noteId = noteId;
-    this.noteService.selectedNote.subNoteId = subNoteId;
 
-    const note = this.notes.find(n => n.id === noteId);
-    if (note) {
-      const subNote = note.subNotes.find(sn => sn.id === subNoteId);
-        
-      if (subNote) {
-        this.selectedContext = subNote.context;
-        
-      }
-    }
-  }
+ 
+    
+
+
 
 }

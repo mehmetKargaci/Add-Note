@@ -15,7 +15,7 @@ export class AddNoteComponent {
 
   @Output() noteData = new EventEmitter<Note>();
   titleControl = new FormControl('');
-  @Input() subNote? : Note;
+  @Input() note? : Note;
 
   notes = this.noteService.notes;
 

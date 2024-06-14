@@ -4,7 +4,7 @@ import { Note } from './services/note.service';
 import { AddNoteComponent } from "./add-note/add-note.component";
 import { NoteListComponent } from "./note-list/note-list.component";
 import { NoteDetailComponent } from "./note-detail/note-detail.component";
-import { NoteService } from './services/note.service';
+import { NoteService, SubNote} from './services/note.service';
 
 
 @Component({
@@ -16,17 +16,16 @@ import { NoteService } from './services/note.service';
 })
 export class AppComponent {
 
+  note?: Note; 
+  subNote?: SubNote; 
+ 
 
-  subNote?: Note;
-  context ?: string;
-
-  showSubNotes(subNote: Note){
-    this.subNote = subNote;
-    console.log(this.subNote);
+  selectedNote(note: Note){
+    this.note = note;      
   }
-  showContext(context: string) {
-    this.context =  context;
 
+  selectedSubnote(subNote: SubNote) {
+    this.subNote= subNote;  
   }
 
 }

@@ -1,10 +1,8 @@
-
-<p>note-details comp</p>
-<div class="details" >
+<p>note-detail-comp</p>
+<div class="title-list" >
   @if(subNote){
-    <input class="context-title" placeholder=" Title" (click)="addContext()">
-    <textarea class="context-input" [value]="subNote.title " (click)="addContext()"></textarea>
-
+    <input class="context-title" placeholder="Title" [value]="subNote.subtitle" >
+    <textarea class="context-input" [value]="subNote.context" (click)="addContext()"></textarea>
   }
 
    

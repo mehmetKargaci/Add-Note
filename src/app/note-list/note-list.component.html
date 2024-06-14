@@ -1,24 +1,23 @@
 <p>note-list-comp</p>
 <div class="title-list">
 
-  @if (subnoteTitle) {
+  @if (note) {
     <div>
-      <button class="subnote-button">+ New Subnote</button>
+      <button class="subnote-button">+ New Subtitle</button>
       <div>
         <input 
           class="subtitle-input"
           placeholder="Enter Subtitle"
           [formControl]="subtitleConrol">
+      </div > 
+      <div *ngFor="let subNote of note.subNotes">
+        <button class="list-button" (click)="onSubNoteClick(subNote)" >{{subNote.subtitle}}</button>
+
       </div>
-      @for(note of notes; track note.id){      
-        @for(subnote of subnoteTitle.subNotes ; track subnote.id){
-          <button 
-            class="list-button" 
-            (click)="onSelectSubNote(note.id, subnote.id )"
-            (click)="onTitleClick(subnote.context)">{{subnote.subtitle}}</button>  
-        }
-  
-      }
+      
+             
+
+
     </div>
   }
 </div>

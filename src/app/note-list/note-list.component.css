@@ -2,14 +2,14 @@
 .title-list{
   display: flex;
   flex-direction: column;
-  background-color: rgb(244, 213, 213);
+  background-color: rgb(228, 222, 222);
   color: rgb(56, 53, 53);
   width: 25rem;
   height: 38rem;
  
 }
 .subnote-button{
-  background-color: rgb(76, 129, 234);  
+  background-color: rgb(62, 67, 77);  
   color: white;
   border: none;
   font: inherit;

@@ -6,7 +6,7 @@ export class Note {
   subNotes: SubNote[] = [];
 }
 
-class SubNote {
+export class SubNote {
   id = Math.random();
   subtitle = '';
   context = '';
@@ -23,7 +23,7 @@ export class NoteService {
         {
           id: 1,
           subtitle: 'Angular',
-          context: 'my context is here'
+          context: 'my example context is here'
         },
         {
           id: 2,
@@ -61,7 +61,7 @@ export class NoteService {
   addNote(title: string) {    
     this.note.title = title;
     this.notes.push(this.note);
-    title = '';
+   
   }
   // addSubnote(subtitle: string) {
   //   this.note.subNotes = subtitle;
