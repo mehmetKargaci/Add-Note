@@ -1,14 +1,8 @@
-.details {
-    border: 1px solid #ddd;
-    margin-top: 10px;
-    background-color: azure;
-    width: 30rem;
-    height: 35rem;
-  }
+
   .title-list{
     display: flex;
     flex-direction: column;
-    background-color: rgb(247, 237, 237);
+    background-color: rgb(242, 247, 248);
     color: rgb(56, 53, 53);
     width: 25rem;
     height: 38rem;
@@ -30,8 +24,19 @@
     width:15rem;
     margin: 10px;
     width: 22rem;
-    height: 30rem;  
-    }
+    height: 35rem;  
+  }
+
+  .subnote-button{
+    background-color: rgb(62, 67, 77);  
+    color: white;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    height: 20px;
+    width: 150px;
+    margin-top: 5px;
+  }
 
   
  

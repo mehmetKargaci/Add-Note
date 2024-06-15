@@ -2,7 +2,9 @@
 <div class="title-list" >
   @if(subNote){
     <input class="context-title" placeholder="Title" [value]="subNote.subtitle" >
-    <textarea class="context-input" [value]="subNote.context" (click)="addContext()"></textarea>
+    <button class="subnote-button" (click)="addContext()">+ Add New context </button>
+    <textarea class="context-input" [value]="subNote.context" [formControl]="contextControl"></textarea>
+   
   }
 
    

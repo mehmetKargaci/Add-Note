@@ -25,6 +25,7 @@ export class AddNoteComponent {
     let title = this.titleControl.value;
     if (title && this.titleControl.valid){
       this.noteService.addNote(title);
+      console.log(this.noteService.notes);
       this.titleControl.setValue('');      
     }   
   }

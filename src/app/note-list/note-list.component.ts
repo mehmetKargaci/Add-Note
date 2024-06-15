@@ -15,23 +15,21 @@ export class NoteListComponent {
 
   @Input() note?: Note;
   @Output() subNoteEmitter = new EventEmitter<SubNote>();
-
-  subtitleConrol = new FormControl('');
-  noteService = inject(NoteService);
   
-
- 
-  addSubnote(): void {
-    let title = this.subtitleConrol.value;
-    if (title && this.subtitleConrol.valid){
-      this.noteService.addNote(title);
-      this.subtitleConrol.setValue('');      
-    }   
-
-  }
+  noteService = inject(NoteService);
+  subTitleControl = new FormControl('');
+  
 
   onSubNoteClick(subNote: SubNote){
     this.subNoteEmitter.emit(subNote);
+  }
+  
+  addSubNote(): void {
+    let subtitle = this.subTitleControl.value;
+    if (this.note && subtitle && this.subTitleControl.valid){
+      this.noteService.addSubNote(this.note, subtitle);      
+      this.subTitleControl.setValue('');      
+    }   
   }
 
  

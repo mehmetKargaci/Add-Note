@@ -3,12 +3,12 @@
 
   @if (note) {
     <div>
-      <button class="subnote-button">+ New Subtitle</button>
+      <button class="subnote-button" (click)="addSubNote()">+ New Subtitle</button>
       <div>
         <input 
           class="subtitle-input"
           placeholder="Enter Subtitle"
-          [formControl]="subtitleConrol">
+          [formControl]="subTitleControl">
       </div > 
       <div *ngFor="let subNote of note.subNotes">
         <button class="list-button" (click)="onSubNoteClick(subNote)" >{{subNote.subtitle}}</button>

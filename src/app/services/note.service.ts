@@ -14,7 +14,6 @@ export class SubNote {
 
 @Injectable({providedIn: 'root'})
 export class NoteService {
-
   private _notes : Note[] = [
     {
       id: 1,
@@ -56,16 +55,27 @@ export class NoteService {
   }
 
   notes = structuredClone(this._notes);
-  note  = new Note();
+  
 
-  addNote(title: string) {    
-    this.note.title = title;
-    this.notes.push(this.note);
-   
+  addNote(title: string) {  
+    let note  = new Note();  
+    note.title = title;
+    this.notes.push(note);   
   }
-  // addSubnote(subtitle: string) {
-  //   this.note.subNotes = subtitle;
-  //   this.notes.push(subnote.subtitle);
-  //   title = '';
-  // }
+
+  addSubNote(note: Note, subtitle: string) {
+    note.subNotes.push({
+      id : Math.random(),
+      subtitle : subtitle,
+      context:""
+    });      
+  }
+  addContext(note: Note, subtitle: string, context: string) {
+    note.subNotes.push({
+      id : Math.random(),
+      subtitle : subtitle,
+      context: context
+    });      
+    
+  }
 }
