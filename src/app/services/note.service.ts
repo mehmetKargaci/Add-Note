@@ -54,8 +54,7 @@ export class NoteService {
     subNoteId: -1,
   }
 
-  notes = structuredClone(this._notes);
-  
+  notes = structuredClone(this._notes);  
 
   addNote(title: string) {  
     let note  = new Note();  
@@ -70,12 +69,12 @@ export class NoteService {
       context:""
     });      
   }
+
   addContext(note: Note, subtitle: string, context: string) {
     note.subNotes.push({
       id : Math.random(),
       subtitle : subtitle,
       context: context
-    });      
-    
+    });     
   }
 }
