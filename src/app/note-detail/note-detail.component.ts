@@ -12,22 +12,16 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './note-detail.component.css'
 })
 export class NoteDetailComponent {
-  @Input() note?: Note;
-  @Input() subNote? : SubNote;  
+  note = input.required<Note>();
+  subNote = input.required<SubNote>();  
   contextControl = new FormControl('');
   
   noteService = inject(NoteService);
 
   addContext() {
     let context = this.contextControl.value;    
-    if (this.note && this.subNote && context && this.contextControl.valid){
-      this.noteService.addContext(this.note,this.subNote.subtitle,context);
-      console.log(this.noteService.notes);           
+    if (this.subNote && context && this.contextControl.valid){
+      this.noteService.addContext(this.subNote(),context);                
     }     
   }
-
- 
-  
-
-
 }

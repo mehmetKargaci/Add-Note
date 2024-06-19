@@ -16,8 +16,8 @@ import { NoteService, SubNote} from './services/note.service';
 })
 export class AppComponent {
 
-  note?: Note; 
-  subNote?: SubNote; 
+  note!: Note; 
+  subNote!: SubNote; 
  
 
   selectedNote(note: Note){
@@ -25,7 +25,7 @@ export class AppComponent {
   }
 
   selectedSubnote(subNote: SubNote) {
-    this.subNote= subNote;  
+    this.subNote= subNote;    
   }
 
 }

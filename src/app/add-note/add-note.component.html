@@ -3,19 +3,14 @@
   <div>
     <h2>NOTEBOOKS</h2>
   </div>
-
   <div>
     <input
       class="title-input"
       placeholder="Enter a Note Title"
-      [formControl]="titleControl"
-    />
-
+      [formControl]="titleControl"/>
     <button class="add-button" (click)="addNote()">+ New Note</button>
   </div>
-
-  @for (note of notes; track note?.id) {
+  @for (note of notes(); track note?.id) {
     <button class="list-button" (click)="onTitleClick(note)">{{ note.title }}</button>
   }
-
 </div>

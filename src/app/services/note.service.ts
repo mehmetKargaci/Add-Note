@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable , signal } from '@angular/core';
 
 export class Note {
   id = Math.random();
@@ -14,7 +14,8 @@ export class SubNote {
 
 @Injectable({providedIn: 'root'})
 export class NoteService {
-  private _notes : Note[] = [
+ 
+  notes = signal<Note[]>([
     {
       id: 1,
       title: 'Javascript',
@@ -47,34 +48,28 @@ export class NoteService {
         },
       ]
     },
-  ];
-
-  selectedNote = {
-    noteId: -1,
-    subNoteId: -1,
-  }
-
-  notes = structuredClone(this._notes);  
+  ]);
 
   addNote(title: string) {  
-    let note  = new Note();  
-    note.title = title;
-    this.notes.push(note);   
+  let note = new Note();
+  note.title = title;
+  this.notes().push(note);
   }
 
   addSubNote(note: Note, subtitle: string) {
-    note.subNotes.push({
-      id : Math.random(),
-      subtitle : subtitle,
-      context:""
-    });      
+    note.subNotes.push(
+      {
+        id: Math.random(),
+        subtitle: subtitle,
+        context: ''
+      }
+    );
+    console.log(this.notes); 
+                
   }
 
-  addContext(note: Note, subtitle: string, context: string) {
-    note.subNotes.push({
-      id : Math.random(),
-      subtitle : subtitle,
-      context: context
-    });     
+  addContext(subnote : SubNote, context: string) { 
+    subnote.context = context;   
   }
+
 }

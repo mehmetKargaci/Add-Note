@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject, input, output, signal } from '@angular/core';
 import { Note, NoteService } from '../services/note.service';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -13,14 +13,13 @@ import { NoteListComponent } from '../note-list/note-list.component';
 })
 export class AddNoteComponent {
 
-  @Output() noteData = new EventEmitter<Note>();
+  noteData = output<Note>();
   titleControl = new FormControl('');
-  @Input() note? : Note;
+  note = input<Note>();
 
-  notes = this.noteService.notes;
-
-  constructor(private noteService: NoteService){ }
-
+  noteService = inject(NoteService);
+  notes = this.noteService.notes; 
+ 
   addNote(): void {
     let title = this.titleControl.value;
     if (title && this.titleControl.valid){

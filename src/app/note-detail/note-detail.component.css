@@ -5,8 +5,7 @@
     background-color: rgb(242, 247, 248);
     color: rgb(56, 53, 53);
     width: 25rem;
-    height: 38rem;
-   
+    height: 38rem;   
   }
   
   .context-title {
@@ -14,7 +13,6 @@
     width:15rem;
     margin: 10px;
     width: 15rem; 
-
   }
 
   .context-input{  

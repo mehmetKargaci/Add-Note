@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter, Input ,inject, signal, computed} from '@angular/core';
+import { Component, OnInit,Output,EventEmitter, Input ,inject, signal, computed, input, output} from '@angular/core';
 import { NoteService, Note, SubNote } from '../services/note.service';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,12 +13,11 @@ import { NoteDetailComponent } from '../note-detail/note-detail.component';
 })
 export class NoteListComponent {
 
-  @Input() note?: Note;
-  @Output() subNoteEmitter = new EventEmitter<SubNote>();
+  note = input.required<Note>();
+  subNoteEmitter = output<SubNote>();
   
   noteService = inject(NoteService);
-  subTitleControl = new FormControl('');
-  
+  subTitleControl = new FormControl('');  
 
   onSubNoteClick(subNote: SubNote){
     this.subNoteEmitter.emit(subNote);
@@ -27,7 +26,7 @@ export class NoteListComponent {
   addSubNote(): void {
     let subtitle = this.subTitleControl.value;
     if (this.note && subtitle && this.subTitleControl.valid){
-      this.noteService.addSubNote(this.note, subtitle);      
+      this.noteService.addSubNote(this.note(), subtitle);      
       this.subTitleControl.setValue('');      
     }   
   }
