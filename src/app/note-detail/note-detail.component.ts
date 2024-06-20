@@ -21,7 +21,7 @@ export class NoteDetailComponent {
   addContext() {
     let context = this.contextControl.value;    
     if (this.subNote && context && this.contextControl.valid){
-      this.noteService.addContext(this.subNote(),context);                
+      this.noteService.addContext(this.note(),this.subNote(),context);                
     }     
   }
 }

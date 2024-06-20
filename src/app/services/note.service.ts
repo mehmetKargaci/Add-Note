@@ -53,7 +53,8 @@ export class NoteService {
   addNote(title: string) {  
     let note = new Note();
     note.title = title;
-    this.notes().push(note);
+    // this.notes().push(note); never do this. (make data unmutable)
+    this.notes.set([...this.notes(), note]) 
   }
 
   deleteNote(note: Note) {
@@ -62,21 +63,49 @@ export class NoteService {
   }
 
   addSubNote(note: Note, subtitle: string) {
-    note.subNotes.push(
-      {
-        id: Math.random(),
-        subtitle: subtitle,
-        context: ''
+    // note.subNotes.push(
+    //   {
+    //     id: Math.random(),
+    //     subtitle: subtitle,
+    //     context: ''
+    //   }
+    // );   //never do this. (make data unmutable)
+    const subnote = {
+      id: Math.random(),
+      subtitle: subtitle,
+      context: ''
+    }
+    this.notes.set(this.notes().map(n => {
+      if(n.id === note.id){
+        n.subNotes = [...note.subNotes, subnote];      
       }
-    );                
-  }
-  deletesubnote(note: Note, subNote: SubNote) {
-    const updatedSubNote = note.subNotes.filter(value => value.id !== subNote.id);
-    note.subNotes = updatedSubNote;
+      return n;
+    }));           
   }
 
-  addContext(subnote : SubNote, context: string) { 
-    subnote.context = context;   
+  deletesubnote(note: Note, subNote: SubNote) {
+    // const updatedSubNote = note.subNotes.filter(value => value.id !== subNote.id);
+    // note.subNotes = updatedSubNote;
+    this.notes.set(this.notes().map(n => {
+      if(n.id === note.id){
+        n.subNotes = n.subNotes.filter(value => value.id !== subNote.id);
+      }
+      return n;
+    }));
+  }
+
+  addContext(note: Note, subNote : SubNote, context: string) { 
+    // subnote.context = context;   
+    this.notes.set(this.notes().map(el => {
+      if(el.id === note.id){
+        el.subNotes.map(val => {
+          if(val.id === subNote.id){
+            val.context = context;
+          }            
+        });             
+      }
+      return el;
+    }));           
   }
 
 }
