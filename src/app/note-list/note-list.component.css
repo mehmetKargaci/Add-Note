@@ -25,14 +25,23 @@
   width: 22rem;  
   }
 
-.list-button{
-  display: flex;
+.list-button{ 
   background-color: rgba(98, 95, 93, 0.478);
   color: white; 
   border: none;
   font: inherit;
   cursor: pointer;
-  width: 23rem;
+  width: 18rem;
   text-align: left;
   margin: 5px;
   }
+  .delete-button{    
+    background-color: rgba(125, 6, 97, 0.478);
+    color: white; 
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    width: 4rem;
+    text-align: left;
+    margin: 5px;
+    }

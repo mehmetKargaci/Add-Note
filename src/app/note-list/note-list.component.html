@@ -12,6 +12,7 @@
       </div > 
       <div *ngFor="let subNote of note().subNotes">
         <button class="list-button" (click)="onSubNoteClick(subNote)" >{{subNote.subtitle}}</button>
+        <button class="delete-button" (click)="deleteSubnote(subNote)" >Delete</button>
       </div>  
     </div>
   }

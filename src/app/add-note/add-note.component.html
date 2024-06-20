@@ -9,8 +9,10 @@
       placeholder="Enter a Note Title"
       [formControl]="titleControl"/>
     <button class="add-button" (click)="addNote()">+ New Note</button>
+   
   </div>
   @for (note of notes(); track note?.id) {
     <button class="list-button" (click)="onTitleClick(note)">{{ note.title }}</button>
+    <button class="delete-button" (click)="deleteNote(note)">Delete</button>
   }
 </div>

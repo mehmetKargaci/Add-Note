@@ -12,7 +12,6 @@ import { NoteDetailComponent } from '../note-detail/note-detail.component';
   styleUrl: './note-list.component.css'
 })
 export class NoteListComponent {
-
   note = input.required<Note>();
   subNoteEmitter = output<SubNote>();
   
@@ -30,10 +29,7 @@ export class NoteListComponent {
       this.subTitleControl.setValue('');      
     }   
   }
-
- 
-    
-
-
-
+  deleteSubnote(subNote: SubNote) {
+    this.noteService.deletesubnote(this.note(), subNote);
+    }
 }

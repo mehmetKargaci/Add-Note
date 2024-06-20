@@ -13,6 +13,7 @@ import { NoteListComponent } from '../note-list/note-list.component';
 })
 export class AddNoteComponent {
 
+
   noteData = output<Note>();
   titleControl = new FormControl('');
   note = input<Note>();
@@ -23,11 +24,13 @@ export class AddNoteComponent {
   addNote(): void {
     let title = this.titleControl.value;
     if (title && this.titleControl.valid){
-      this.noteService.addNote(title);
-      console.log(this.noteService.notes);
+      this.noteService.addNote(title);      
       this.titleControl.setValue('');      
     }   
   }
+  deleteNote(note: Note) {
+    this.noteService.deleteNote(note);
+    }
 
   onTitleClick(note: Note) {
     this.noteData.emit(note);

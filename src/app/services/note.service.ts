@@ -51,9 +51,14 @@ export class NoteService {
   ]);
 
   addNote(title: string) {  
-  let note = new Note();
-  note.title = title;
-  this.notes().push(note);
+    let note = new Note();
+    note.title = title;
+    this.notes().push(note);
+  }
+
+  deleteNote(note: Note) {
+    const updatedNotes = this.notes().filter(value => value.id !== note.id);
+    this.notes.set(updatedNotes);    
   }
 
   addSubNote(note: Note, subtitle: string) {
@@ -63,9 +68,11 @@ export class NoteService {
         subtitle: subtitle,
         context: ''
       }
-    );
-    console.log(this.notes); 
-                
+    );                
+  }
+  deletesubnote(note: Note, subNote: SubNote) {
+    const updatedSubNote = note.subNotes.filter(value => value.id !== subNote.id);
+    note.subNotes = updatedSubNote;
   }
 
   addContext(subnote : SubNote, context: string) { 
