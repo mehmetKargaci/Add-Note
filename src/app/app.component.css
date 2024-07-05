@@ -1,32 +1,21 @@
-body{
-  min-height: 100vh;
-}
-
 .note-title{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto ;
   justify-items: center;
   align-items: center;
-  margin: 20px;
-  height: 98%;
-  width: 98%;
-  gap: 1rem;
   text-align: center;
   color: aliceblue;
   background: #5d6060;
-  padding: 1rem;
+  padding: 1.3rem;
   border-radius: 12px;
 }
 
 .page-header{
-  grid-column-start: 1;
-  grid-column-end: 4;
+  display: flex;
   background-color: #3c6691;
   margin-left: 5px;
   padding: 1.3rem;
-  display: flex;
-  width: 95%;
   justify-content: space-between;
   border-radius: 12px;
 }
@@ -68,36 +57,52 @@ button {
   padding: 0.9rem;
   min-height: fit-content;
 }
-
-@media (max-width: 700px) {
-  .nav-bar {
-    display: none;
-    position: absolute;
-    top: 3.7rem;
-    left: 0;
-    width: 100%;
-    background-color:  #1a79cf;
-    text-align: center;
+@media (max-width: 1294px) {
+  .note-title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
   }
 
-  .nav-bar.responsive {
-    display: block;
-  }
+  @media (max-width: 850px) {
+    .note-title {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
 
-  .nav-bar a {
-    display: block;
-  }
+    @media (max-width: 700px) {
+      .nav-bar {
+        display: none;
+        position: absolute;
+        top: 3.7rem;
+        left: 0;
+        width: 100%;
+        background-color: #1a79cf;
+        text-align: center;
+      }
 
-  .menu-icon {
-    display: block;
-    z-index: 1;
-  }
+      .nav-bar.responsive {
+        display: block;
+      }
 
-  button {
-    padding: 0.4rem;
-  }
-  .logo {
-    font-size: 1.4rem;
+      .nav-bar a {
+        display: block;
+      }
+
+      .menu-icon {
+        display: block;
+        z-index: 1;
+      }
+
+      button {
+        padding: 0.4rem;
+      }
+
+      .logo {
+        font-size: 1.4rem;
+      }
+    }
   }
 }
 
