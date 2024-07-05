@@ -2,46 +2,59 @@
 .title-list{
   display: flex;
   flex-direction: column;
-  background-color: rgb(228, 222, 222);
+  background-color: rgb(227, 227, 222);
   color: rgb(56, 53, 53);
   width: 25rem;
   height: 38rem;
- 
+
 }
 .subnote-button{
-  background-color: rgb(62, 67, 77);  
-  color: white;
+  background-color: rgb(94, 72, 117);
+  color: #b5b5b5;
   border: none;
-  font: inherit;
+  font-family: Roboto, sans-serif;
   cursor: pointer;
   height: 20px;
   width: 150px;
+  border-radius:10px;
   margin-top: 5px;
 }
-.subtitle-input{  
+.subtitle-input{
   text-align: left;
-  width:15rem;
   margin: 10px;
-  width: 22rem;  
-  }
+  width: 22rem;
+  height: 1.4rem;
+}
 
-.list-button{ 
-  background-color: rgba(98, 95, 93, 0.478);
-  color: white; 
+.list-button{
+  background-color: rgba(149, 147, 149, 0.47);
+  color: #272525;
   border: none;
-  font: inherit;
+  font-family: Roboto, sans-serif;
   cursor: pointer;
   width: 18rem;
+  height: 1.4rem;
   text-align: left;
   margin: 5px;
-  }
-  .delete-button{    
-    background-color: rgba(125, 6, 97, 0.478);
-    color: white; 
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    width: 4rem;
-    text-align: left;
-    margin: 5px;
-    }
+}
+
+.list-button:hover{
+  background-color: rgba(83, 80, 76, 0.47);
+}
+
+.delete-button{
+  background-color: #aa3942;
+  color: #f5f2f7;
+  border: none;
+  border-radius:10px;
+  font: inherit;
+  cursor: pointer;
+  width: 3%;
+  min-width: 4rem;
+  text-align: center;
+}
+
+.delete-button:hover{
+  background-color: #b819aa;
+  transition: 0.7s;
+}

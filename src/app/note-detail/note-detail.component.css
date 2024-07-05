@@ -2,40 +2,39 @@
   .title-list{
     display: flex;
     flex-direction: column;
-    background-color: rgb(242, 247, 248);
+    background-color: rgb(225, 225, 213);
     color: rgb(56, 53, 53);
     width: 25rem;
-    height: 38rem;   
-  }
-  
-  .context-title {
-    text-align: left;
-    width:15rem;
-    margin: 10px;
-    width: 15rem; 
+    height: 38rem;
   }
 
-  .context-input{  
-    text-align:start;
-    margin-top: 10px;
-    padding-top: 10px;
-    width:15rem;
+  .context-title {
+    text-align: left;
     margin: 10px;
     width: 22rem;
-    height: 35rem;  
+    height: 1.4rem;
+
+  }
+
+  .context-input{
+    text-align:start;
+    margin: 10px;
+    font-family: Monaco, sans-serif;
+    width: 22rem;
+    height: 35rem;
   }
 
   .subnote-button{
-    background-color: rgb(62, 67, 77);  
+    background-color: rgb(45, 86, 103);
     color: white;
     border: none;
-    font: inherit;
+    font-family: Roboto, sans-serif;
     cursor: pointer;
     height: 20px;
     width: 150px;
+    border-radius: 10px;
     margin-top: 5px;
-    margin: 10px;
+    margin-left: 8rem;
   }
 
-  
- 
+

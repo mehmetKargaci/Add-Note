@@ -1,19 +1,18 @@
-<p>note-list-comp</p>
 <div class="title-list">
 
   @if (note()) {
     <div>
       <button class="subnote-button" (click)="addSubNote()">+ New Subtitle</button>
       <div>
-        <input 
+        <input
           class="subtitle-input"
           placeholder="Enter Subtitle"
           [formControl]="subTitleControl">
-      </div > 
+      </div >
       <div *ngFor="let subNote of note().subNotes">
         <button class="list-button" (click)="onSubNoteClick(subNote)" >{{subNote.subtitle}}</button>
         <button class="delete-button" (click)="deleteSubnote(subNote)" >Delete</button>
-      </div>  
+      </div>
     </div>
   }
 </div>

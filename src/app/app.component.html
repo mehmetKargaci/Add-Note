@@ -1,10 +1,23 @@
 
 <div class="note-title">
+  <div class="page-header">
+    <div class="logo">
+      <p>AddNote App</p>
+    </div>
+    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+    </a>
+    <div id="navigation-bar" class="nav-bar">
+      <a href="#">About</a>
+      <a href="#">Contact us</a>
+    </div>
+
+    <div class="header-right"><button>Sign in</button></div>
+  </div>
   <app-add-note (noteData)="selectedNote($event)" ></app-add-note>
-  <app-note-list 
-    (subNoteEmitter)="selectedSubnote($event)" 
+  <app-note-list
+    (subNoteEmitter)="selectedSubnote($event)"
     [note]="note"></app-note-list>
-  <app-note-detail    
+  <app-note-detail
     [subNote]="subNote"
     [note]="note"></app-note-detail>
 </div>

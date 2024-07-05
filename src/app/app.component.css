@@ -1,18 +1,106 @@
-.note-title{
-    display: flex;
-    flex-direction: row;  
-    align-items: center;
-    gap: 1rem;      
-    text-align: center;
-    color: aliceblue;
-    background: rgb(199, 198, 198);
-    padding: 1rem;
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px ;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    height: 40rem;
-    
-  
+body{
+  min-height: 100vh;
 }
+
+.note-title{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto ;
+  justify-items: center;
+  align-items: center;
+  margin: 20px;
+  height: 98%;
+  width: 98%;
+  gap: 1rem;
+  text-align: center;
+  color: aliceblue;
+  background: #5d6060;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.page-header{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: #3c6691;
+  margin-left: 5px;
+  padding: 1.3rem;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  border-radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  color: white;
+  align-self: center;
+  margin-left: 1.2rem;
+  font-size: 2.5rem;
+}
+
+.nav-bar {
+  margin: auto;
+}
+
+.nav-bar a {
+  color: white;
+  padding: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.menu-icon {
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+button {
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 0.9rem;
+  min-height: fit-content;
+}
+
+@media (max-width: 700px) {
+  .nav-bar {
+    display: none;
+    position: absolute;
+    top: 3.7rem;
+    left: 0;
+    width: 100%;
+    background-color:  #1a79cf;
+    text-align: center;
+  }
+
+  .nav-bar.responsive {
+    display: block;
+  }
+
+  .nav-bar a {
+    display: block;
+  }
+
+  .menu-icon {
+    display: block;
+    z-index: 1;
+  }
+
+  button {
+    padding: 0.4rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+}
+
+
+
 
