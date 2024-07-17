@@ -1,14 +1,16 @@
-<div class="container">
-  <div>
+<div class="container w-full flex flex-col">
+  <div class="inline-block">
     <input
-      class="title-input"
+      class="m-2 p-1 rounded-md w-56"
       placeholder="Enter a Note Title"
       [formControl]="titleControl"/>
-    <button class="add-button" (click)="addNote()">+ New Note</button>
-
+    <button class="mt-1 font-lato bg-purple-400 pr-2 rounded-lg hover:bg-purple-200" (click)="addNote()">+ New Note</button>
   </div>
-  @for (note of notes(); track note?.id) {
-    <button class="list-button" (click)="onTitleClick(note)">{{ note.title }}</button>
-    <button class="delete-button" (click)="deleteNote(note)">Delete</button>
-  }
+  <div class="inline-block">
+    @for (note of notes(); track note?.id) {
+      <button class="items-start bg-sky-400 m-1 text-white w-3/5 rounded-md hover:bg-cyan-400 text-left pl-4 " (click)="onTitleClick(note)">{{ note.title }}</button>
+      <button class="bg-pink-500 rounded-lg p-0.5 hover:bg-pink-200 " (click)="deleteNote(note)">Delete</button>
+    }
+  </div>
 </div>
+

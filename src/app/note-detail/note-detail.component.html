@@ -1,7 +1,9 @@
-<div class="title-list" >
-  @if(subNote()){
-    <input class="context-title" placeholder="Title" [value]="subNote().subtitle" >
-    <button class="subnote-button" (click)="addContext()">+ Add New context </button>
-    <textarea class="context-input" [value]="subNote().context" [formControl]="contextControl"></textarea>
-  }
+<div class="flex flex-col flex-wrap justify-start bg-white" >
+  <div class="flex flex-col">
+    @if(subNote()){
+      <input class="m-0.5 p-1 rounded-md border border-gray-200 w-11/12" placeholder="Title" [value]="subNote().subtitle" >
+      <button class="font-roboto m-0.5 mb-2 bg-cyan-200 rounded-md pr-2 pl-2 hover:bg-cyan-50 w-3/4" (click)="addContext()">+ Add New context </button>
+      <textarea class="border border-gray-500 h-96 w-11/12" [value]="subNote().context" [formControl]="contextControl"></textarea>
+    }
+  </div>
 </div>

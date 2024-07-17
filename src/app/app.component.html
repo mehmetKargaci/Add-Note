@@ -1,21 +1,22 @@
 
-<div class="page-header">
-  <div class="logo">
+<div class="flex flex-row justify-between m-2 p-4 border border-b-teal-200 rounded-md bg-cyan-600">
+  <div class="text-white font-semibold">
     <p>AddNote App</p>
   </div>
-   <a id="menu-icon" class="menu-icon" onclick="onMenuClick()"></a>
-  <div id="navigation-bar" class="nav-bar">
+  <div class="ml-2 text-white max-sm:hidden">
     <a href="#">About</a>
-    <a href="#">Contact us</a>
+    <a class="ml-6" href="#" >Contact us</a>
   </div>
-  <div class="header-right"><button>Sign in</button></div>
+  <div class="text-white" ><button>Sign in</button></div>
 </div>
-<div class="note-title">
-  <app-add-note (noteData)="selectedNote($event)" ></app-add-note>
+<div class="grid grid-cols-3 gap-1">
+  <app-add-note class="bg-neutral-200 ml-2 mt-4" (noteData)="selectedNote($event)" ></app-add-note>
   <app-note-list
+    class="bg-gray-200 mt-4"
     (subNoteEmitter)="selectedSubnote($event)"
     [note]="note"></app-note-list>
   <app-note-detail
+    class="w-full h-screen mt-4 mr-2"
     [subNote]="subNote"
     [note]="note"></app-note-detail>
 </div>

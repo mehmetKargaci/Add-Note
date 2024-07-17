@@ -1,16 +1,16 @@
-<div class="title-list">
+<div class="flex-wrap h-96 container w-full flex flex-col">
   @if (note()) {
-    <div>
-      <button class="subnote-button" (click)="addSubNote()">+ New Subtitle</button>
+    <div class="inline-block">
+      <button class="font-roboto m-4 bg-fuchsia-400 rounded-md pr-2 pl-2 hover:bg-fuchsia-100" (click)="addSubNote()">+ New Subtitle</button>
       <div>
         <input
-          class="subtitle-input"
+          class="m-0.5 p-1 rounded-md w-11/12"
           placeholder="Enter Subtitle"
           [formControl]="subTitleControl">
       </div >
       <div *ngFor="let subNote of note().subNotes">
-        <button class="list-button" (click)="onSubNoteClick(subNote)" >{{subNote.subtitle}}</button>
-        <button class="delete-button" (click)="deleteSubnote(subNote)" >Delete</button>
+        <button class="items-start bg-stone-400 m-2 text-white rounded-md hover:bg-cyan-400 text-left pl-4 w-8/12" (click)="onSubNoteClick(subNote)" >{{subNote.subtitle}}</button>
+        <button class="bg-red-600 rounded-lg hover:bg-pink-200 w-2/12" (click)="deleteSubnote(subNote)" >Delete</button>
       </div>
     </div>
   }
